@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        body{
+            background: rgba(174, 171, 171, 0.3);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .sub_cont{
+            background: white;
+            width: 30em;
+            height: 60vh;
+            padding: 3em 0 0 5em;
+
+        }
+        .endofedit{
+            margin: 7em 0 0 7em ;
+            width: 15em;
+            height: 6.5vh;
+            background: rgb(32, 32, 32);
+            color: white;
+            border: none;
+        }
+        #edit{
+            margin-top: 2em;
+            width: 30em;
+            height: 6.5vh;
+            background: rgba(249, 24, 110, 0.9);
+            color: white;
+            border: none;
+        }
+        input:not(#edit){
+            width: 20em;
+            height: 4vh;
+            display: grid;
+        }
+        label{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sub_cont">
+            <h1>Edit Task</h1>
+            <form action="">
+                TaskID <input type=""><br>
+                Name <input type="text" name="newname"><br>
+                <label for="check"> Completed <input type="checkbox" id="check"></label>
+               <br>
+                <input type="submit" id="edit" value="Edit">
+                <p></p>
+            </form>
+            <button class="endofedit">Back To Tasks</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    
+</script>
+</html>
