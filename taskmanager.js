@@ -6,11 +6,19 @@ const connectDB = require('./db/connect');
 require('dotenv').config()
 const notFound = require('./middlewares/notfound')
 const errorHandler = require('./middlewares/error_handler')
+
+const swaggerui = require('swagger-ui-express')
+const yaml = require('yamljs')
+const swaggerdoc =yaml.load('./swagger.yaml')
 // middle ware
 app.use(express.static('./projects'))
 app.use(express.json())
 
 //routes
+app.get('/' , (req,res)=>{
+    res.send('<h1>Tasks</h1><a href="/api-tasks">Documentation</a>')
+})
+app.use('api-tasks',swaggerui.serve,swaggerui.setup(swaggerdoc))
 app.get('/hello', (req,res) =>{
     res.send('Task Manager App')
 })
