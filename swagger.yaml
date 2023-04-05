@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Task manager Api
+  contact: {}
+  version: '1.0'
+servers:
+- url: http://localhost:3000/api/v1
+  variables: {}
+paths:
+  /tasks:
+    get:
+      tags:
+      - Tasks
+      summary: getAllTasks
+      operationId: getAllTasks
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    post:
+      tags:
+      - Tasks
+      summary: CreateTask
+      operationId: CreateTask
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateTaskRequest'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    parameters: []
+  /tasks/hey:
+    get:
+      tags:
+      - Tasks
+      summary: Get Single Task
+      operationId: GetSingleTask
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    parameters: []
+  /tasks/123:
+    patch:
+      tags:
+      - Tasks
+      summary: Update Task
+      operationId: UpdateTask
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    parameters: []
+  /tasks/peter:
+    delete:
+      tags:
+      - Tasks
+      summary: Delete Task
+      operationId: DeleteTask
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    parameters: []
+components:
+  schemas:
+    CreateTaskRequest:
+      title: CreateTaskRequest
+      required:
+      - name
+      - action
+      type: object
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+tags:
+- name: Misc
+  description: ''
+- name: Tasks
+  description: ''
